@@ -76,11 +76,31 @@ background:var(--primary); color:#fff; cursor:pointer;
 </div>
 
 
-<button onclick="alert('Paiement effectué ! Déblocage des fichiers...')">Payer (démo)</button>
+<button id="payBtn">Payer (démo)</button>
+
+<script>
+const btn = document.getElementById('payBtn');
+
+btn.addEventListener('click', () => {
+    // Feedback visuel immédiat
+    btn.textContent = "Traitement...";
+    btn.style.background = "#005c99"; // couleur plus foncée au clic
+    btn.disabled = true; // éviter plusieurs clics
+
+    // Délai avant pop-up (2 secondes)
+    setTimeout(() => {
+        alert('Paiement effectué ! Déblocage des fichiers...');
+        btn.textContent = "Payer (démo)";
+        btn.style.background = ""; // remet la couleur initiale
+        btn.disabled = false;
+    }, 2000);
+});
+</script>
 
 
 <div class="secure">🔒 Paiement sécurisé</div>
 <p class="note">En cliquant sur "Payer", vous acceptez nos Conditions d'utilisation et notre Politique de confidentialité.</p>
 </div>
 </body>
+
 </html>
