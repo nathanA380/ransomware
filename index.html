@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paiment - Déverouillage</title>
+<style>
+:root {
+--primary:#0070ba;
+--bg:#f2f4f7;
+--card:#ffffff;
+--text:#1f2937;
+--muted:#6b7280;
+--radius:14px;
+}
+*{box-sizing:border-box}
+body{
+margin:0; min-height:100vh; display:grid; place-items:center;
+font-family: Inter, Arial, sans-serif; background:var(--bg); color:var(--text);
+}
+.card{
+width:100%; max-width:420px; background:var(--card);
+border-radius:var(--radius); padding:28px;
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+.header{display:flex; justify-content:space-between; align-items:center}
+.price{font-size:28px; font-weight:700}
+.badge{
+background:#eef6ff; color:var(--primary);
+padding:6px 10px; border-radius:999px; font-size:12px; font-weight:600;
+}
+.desc{color:var(--muted); margin:10px 0 22px}
+.field{margin-bottom:14px}
+label{font-size:12px; color:var(--muted)}
+input{
+width:100%; padding:14px; margin-top:6px;
+border-radius:10px; border:1px solid #e5e7eb; font-size:14px;
+}
+.row{display:grid; grid-template-columns:2fr 1fr; gap:12px}
+button{
+width:100%; padding:15px; margin-top:10px;
+border-radius:12px; border:none; font-size:16px; font-weight:700;
+background:var(--primary); color:#fff; cursor:pointer;
+}
+.note{margin-top:12px; font-size:12px; color:var(--muted); text-align:center}
+.secure{display:flex; gap:8px; align-items:center; justify-content:center; margin-top:10px; font-size:12px; color:#374151}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="header">
+<h2>Dévérouillage du PC</h2>
+<span class="badge">Paiement unique</span>
+</div>
+<div class="price">99,99 €</div>
+<p class="desc">Fichiers débloqués seulement en cas de paiement dans les 48 heures.</p>
+
+
+<div class="field">
+<label>Email</label>
+<input placeholder="email@exemple.com" />
+</div>
+<div class="field">
+<label>Numéro de carte</label>
+<input placeholder="4242 4242 4242 4242" />
+</div>
+<div class="row">
+<div class="field">
+<label>Expiration</label>
+<input placeholder="MM/AA" />
+</div>
+<div class="field">
+<label>CVC</label>
+<input placeholder="123" />
+</div>
+</div>
+
+
+<button onclick="alert('Paiement effectué ! Déblocage des fichiers...')">Payer (démo)</button>
+
+
+<div class="secure">🔒 Paiement sécurisé</div>
+<p class="note">En cliquant sur "Payer", vous acceptez nos Conditions d'utilisation et notre Politique de confidentialité.</p>
+</div>
+</body>
+</html>
